@@ -20,7 +20,11 @@ phonecatApp.config(['$routeProvider',
       }).
       when('/signup', {
         templateUrl: 'partials/signup.html',
-        controller: 'PhoneListCtrl'
+        controller: 'SignUpCtrl'
+      }).
+      when('/signin', {
+        templateUrl: 'partials/signin.html',
+        controller: 'SignInCtrl'
       }).
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',

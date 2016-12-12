@@ -21,9 +21,16 @@ profileBuilderController.controller('PhoneDetailCtrl', ['$scope', '$routeParams'
     };*/
   }]);
 
-profileBuilderController.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 
+profileBuilderController.controller('SignUpCtrl', ['$scope', '$routeParams', 
   function($scope, $routeParams) {
     $scope.SignUp = function(signUpdetails){
+      
+    }
+  }]);
+
+profileBuilderController.controller('SignInCtrl', ['$scope', '$routeParams', 
+  function($scope, $routeParams) {
+    $scope.SignIn = function(signUpdetails){
       
     }
   }]);
