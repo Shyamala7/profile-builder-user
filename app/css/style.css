@@ -3864,7 +3864,7 @@ table.focus-on tbody tr.focused td {
 }
 /* Login- register pages */
 .login-register {
-  background: url(../../plugins/images/login-register.jpg) no-repeat center center / cover !important;
+  background: url(/img/login-register.jpg) no-repeat center center / cover !important;
   height: 100%;
   position: fixed;
 }
@@ -15757,4 +15757,8 @@ h6 {
 .well,
 pre {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.scroll-vertical {
+    overflow-y: scroll;
+    height: 700px;
 }

@@ -6,12 +6,12 @@ var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'phonecatAnimations',
 
-  'phonecatControllers',
+  'profileBuilderControllers',
   'phonecatFilters',
-  'phonecatServices'
+  'profileBuilderServices'
 ]);
 
-phonecatApp.config(['$routeProvider',
+phonecatApp.config(['$routeProvider', 
   function($routeProvider) {
     $routeProvider.
       when('/phones', {
@@ -33,4 +33,11 @@ phonecatApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/signin'
       });
+      
   }]);
+phonecatApp.run(function($rootScope) {
+  // you can inject any instance here
+  $rootScope.baseURL = 'http://localhost:8000/';
+});
+
+

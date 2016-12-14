@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var profileBuilderController = angular.module('phonecatControllers', []);
+var profileBuilderController = angular.module('profileBuilderControllers', []);
 
 profileBuilderController.controller('PhoneListCtrl', ['$scope', 'Phone',
   function($scope, Phone) {
@@ -10,27 +10,24 @@ profileBuilderController.controller('PhoneListCtrl', ['$scope', 'Phone',
     $scope.orderProp = 'age';
   }]);
 
-profileBuilderController.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    /*$scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
-    });
 
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    };*/
-  }]);
 
-profileBuilderController.controller('SignUpCtrl', ['$scope', '$routeParams', 
-  function($scope, $routeParams) {
+profileBuilderController.controller('SignUpCtrl', ['$scope', '$routeParams', 'DataService', '$rootScope',
+  function($scope, $routeParams, DataService, $rootScope) {
     $scope.SignUp = function(signUpdetails){
-      
+      console.log(JSON.stringify(signUpdetails));
+      DataService.post($rootScope.baseURL+"registerUser", signUpdetails).then(function (resp){
+        console.log(resp);
+      });
     }
   }]);
 
-profileBuilderController.controller('SignInCtrl', ['$scope', '$routeParams', 
-  function($scope, $routeParams) {
-    $scope.SignIn = function(signUpdetails){
-      
+
+  profileBuilderController.controller('SignInCtrl', ['$scope', '$routeParams', 'DataService', '$rootScope',
+  function($scope, $routeParams, DataService, $rootScope) {
+    $scope.SignIn = function(signIndetails){
+ DataService.post($rootScope.baseURL+"userlogin", signIndetails).then(function (resp){
+        console.log(resp);
+      });
     }
   }]);
